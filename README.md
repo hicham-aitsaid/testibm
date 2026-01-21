@@ -1,24 +1,45 @@
-Descriptif de la formation – Ansible Automation Platform
+Compte rendu de réunion — Upgrade LibertyCore 21 vers 25 (prévention de l’obsolescence)
+1) Objet de la réunion
 
-Cette formation a pour objectif d’initier et de perfectionner les participants à l’utilisation de Red Hat Ansible Automation Platform pour automatiser le déploiement, la configuration et la gestion des infrastructures informatiques.
-Elle couvre les concepts fondamentaux de l’automatisation, l’écriture et l’exécution de playbooks Ansible, ainsi que l’utilisation de la plateforme Ansible Automation Platform (Controller, Execution Environments, Inventories, Credentials, etc.).
+La réunion avait pour objectif de cadrer le projet de montée de version de LibertyCore 21 vers LibertyCore 25, dans le but de parer à l’obsolescence et de sécuriser la pérennité des applications concernées.
 
-À travers des démonstrations et des ateliers pratiques, les participants apprendront à automatiser des tâches répétitives, standardiser les processus IT et améliorer la fiabilité, la sécurité et la rapidité des opérations sur des environnements hétérogènes (Linux, Windows, réseau, cloud).
+2) Points abordés
+a) Discussion de la timeline
 
-Objectifs de la formation
+Une première discussion a eu lieu autour de la planification globale de l’upgrade.
+L’objectif est d’identifier les étapes clés (préparation, mise à niveau, validation, déploiement) ainsi que les contraintes possibles selon les applications.
 
-À l’issue de cette formation, les participants seront capables de :
+b) Mise en place des environnements d’intégration
 
-Comprendre les principes et les bénéfices de l’automatisation IT
+Il a été acté de mettre en place les environnements d’intégration pour les applications qui n’en disposent pas encore, afin de :
 
-Maîtriser les concepts clés d’Ansible (inventaires, modules, playbooks, rôles)
+fiabiliser les tests de montée de version,
 
-Déployer et utiliser Ansible Automation Platform
+faciliter les validations techniques et fonctionnelles,
 
-Créer, tester et exécuter des playbooks pour automatiser des tâches courantes
+réduire les risques lors du passage en production.
 
-Gérer les accès, les identifiants et les inventaires via la plateforme
+c) Cas particulier : base Prospect / Carthago BPM
 
-Mettre en place des bonnes pratiques d’automatisation et de sécurité
+Le sujet de la base Prospect (Carthago BPM) a été identifié comme un point spécifique, car elle est toujours en LibertyCore version 21.
+Cette application devra être intégrée au périmètre de montée de version avec une attention particulière sur les impacts potentiels.
 
-Industrialiser et centraliser l’automatisation au sein de l’organisation
+d) Architecture : séparation des couches (Web / Applicatif / BDD)
+
+Une demande forte a été exprimée concernant une séparation plus stricte des couches :
+
+couche Web,
+
+couche Applicative,
+
+couche Base de données,
+
+et éviter une architecture où la couche web agit principalement comme un reverse proxy.
+
+Cependant, il a été précisé que cette séparation n’est pas réalisable sur les projets actuels, notamment :
+
+BFI Clearing
+
+Compense
+
+Ces projets présentent des contraintes techniques et/ou d’architecture empêchant ce type d’évolution dans le cadre de l’upgrade.
