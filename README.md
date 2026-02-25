@@ -1,29 +1,23 @@
-Objet : Contenu du dossier envoyé à WES
+Objet : Demande de zone réseau pour création d'une VM (Rebond PowerBI vers TSM)
 
-Madame, Monsieur,
+Bonjour l'équipe Architecture,
 
-Je vous prie de bien vouloir trouver ci-joint mon dossier académique dans le cadre de l’évaluation de mes diplômes par World Education Services (WES).
+Nous devons créer une nouvelle machine virtuelle et nous souhaiterions savoir dans quelle zone réseau nous devons la déployer afin de respecter les règles de sécurité et d'infrastructure.
 
-Mon envoi contient les documents suivants :
-	1.	Première enveloppe ESI-SBA (Ecole supérieure d’informatique de Sidi Bel Abbés) :
-• Relevé de notes des années du cycle préparatoire à l’ESI-SBA (2 ans)
-	2.	Deuxième enveloppe ESI ex. INI (Ecole Supérieure d’informatique):
-• Relevés de notes des années du cycle supérieur à l’ESI Alger (3ans)
-• Diplôme de l’ESI Alger
-• Relevé de notes global de l’ESI Alger
-	3.	Troisième enveloppe :
-• Traductions officielles de l’ensemble des relevés et documents académiques mentionnés ci-dessus
+Voici les caractéristiques et les besoins associés à cette VM :
 
-Je vous remercie de bien vouloir prendre en considération ces documents pour l’évaluation de mon parcours académique.
+Système d'exploitation : Windows Server
 
-Je reste à votre disposition pour toute information complémentaire.
+Rôle : Serveur de rebond (nous prévoyons d'y installer PowerBI)
+
+Connectivité requise : La VM devra s'interfacer avec la base de données IBM DB2 de Spectrum Protect (TSM).
+
+Port de communication : 51502
+
+Type d'accès : Lecture seule
+
+Pourriez-vous nous indiquer la zone la plus adéquate pour héberger ce serveur ? Nous pourrons ensuite procéder à la création de la VM et à l'ouverture des flux nécessaires.
+
+Merci d'avance pour votre aide.
 
 Cordialement,
-
-Nom et prénom : AIT SAID Hicham
-
-Référence WES : 7199898
-
-Adresse e-mail : h.aitsaid@outlook.com
-
-Numéro de téléphone : +213 5 49 55 97 98
