@@ -1,23 +1,33 @@
-Objet : Demande de zone réseau pour création d'une VM (Rebond PowerBI vers TSM)
-
-Bonjour l'équipe Architecture,
-
-Nous devons créer une nouvelle machine virtuelle et nous souhaiterions savoir dans quelle zone réseau nous devons la déployer afin de respecter les règles de sécurité et d'infrastructure.
-
-Voici les caractéristiques et les besoins associés à cette VM :
-
-Système d'exploitation : Windows Server
-
-Rôle : Serveur de rebond (nous prévoyons d'y installer PowerBI)
-
-Connectivité requise : La VM devra s'interfacer avec la base de données IBM DB2 de Spectrum Protect (TSM).
-
-Port de communication : 51502
-
-Type d'accès : Lecture seule
-
-Pourriez-vous nous indiquer la zone la plus adéquate pour héberger ce serveur ? Nous pourrons ensuite procéder à la création de la VM et à l'ouverture des flux nécessaires.
-
-Merci d'avance pour votre aide.
-
-Cordialement,
+INSERT INTO client (
+    created,
+    updated,
+    email,
+    radical,
+    bank,
+    client_type,
+    client_code,
+    customer_id,
+    business_id,
+    person_id,
+    wimpay_customer_status,
+    switch_customer_status,
+    dob_or_registration_date,
+    bank_agency_code,
+    last_update_status_date
+) VALUES (
+    NOW(),
+    NOW(),
+    'dummy.client@example.com',
+    '1234567890',
+    'DUMMY_BANK',
+    'INDIVIDUAL',
+    'CLT001',
+    'CUST001',
+    1,
+    1,
+    true,
+    true,
+    '1990-01-01',
+    '001',
+    NOW()
+);
