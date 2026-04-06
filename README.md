@@ -1,1 +1,14 @@
-dsmadmc -id=admin -pa=P@ssw0rdP@ssw0rd query schedule WIN_DOM -dataonly=yes -comma | for /f "tokens=2 delims=," %a in ('findstr /v "^$"') do @echo %a
+- name: Install expect
+  package:
+    name: expect
+    state: present
+
+- name: test connection to TSM Server
+  shell: |
+    expect -c '
+      spawn dsmc q session
+      expect "Password:"
+      send "{{ tsm_password }}\r"
+      expect eof
+    '
+
